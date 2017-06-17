@@ -35,34 +35,70 @@ if (correctedSpellString.indexOf('dai')!=-1) {
   var searchDai = correctedSpellString.match(/dai/g);
   for (var i = 0; i < searchDai.length; i++) {
     points += subspellPoints.dai
-    correctedSpellString=correctedSpellString.split('dai').join();
-  }  
+    correctedSpellString=correctedSpellString.split('dai').join('');
+  }
 }
 
-// var searchAi = correctedSpellString.match(/ai/g);
-// for (var i = 0; i < searchAi.length; i++) {
-//   points += subspellPoints.ai
-//   correctedSpellString=correctedSpellString.split('ai').join();
-// }
+if (correctedSpellString.indexOf('aine')!=-1) {
+  var searchAine = correctedSpellString.match(/aine/g);
+  for (var i = 0; i < searchAine.length; i++) {
+    points += subspellPoints.ai
+    points += subspellPoints.ne
+    correctedSpellString=correctedSpellString.split('aine').join('');
+  }
+}
+
+if (correctedSpellString.indexOf('ain')!=-1) {
+  var searchAin = correctedSpellString.match(/ain/g);
+  for (var i = 0; i < searchAin.length; i++) {
+    points += subspellPoints.ain
+    correctedSpellString=correctedSpellString.split('ain').join('');
+  }
+}
+
+if (correctedSpellString.indexOf('ai')!=-1) {
+  var searchAi = correctedSpellString.match(/ai/g);
+  for (var i = 0; i < searchAi.length; i++) {
+    points += subspellPoints.ai
+    correctedSpellString=correctedSpellString.split('ai').join('');
+  }
+}
+
+if (correctedSpellString.indexOf('jee')!=-1) {
+  var searchJee = correctedSpellString.match(/jee/g);
+  for (var i = 0; i < searchJee.length; i++) {
+    points += subspellPoints.jee
+    correctedSpellString=correctedSpellString.split('jee').join('');
+  }
+}
+
+if (correctedSpellString.indexOf('je')!=-1) {
+  var searchJe = correctedSpellString.match(/je/g);
+  for (var i = 0; i < searchJe.length; i++) {
+    points += subspellPoints.je
+    correctedSpellString=correctedSpellString.split('je').join('');
+  }
+}
+
+if (correctedSpellString.indexOf('ne')!=-1) {
+  var searchNe = correctedSpellString.match(/ne/g);
+  for (var i = 0; i < searchNe.length; i++) {
+    points += subspellPoints.ne
+    correctedSpellString=correctedSpellString.split('ne').join('');
+  }
+}
 
 console.log(correctedSpellString);
+console.log(correctedSpellString.length);
 
-// var searchAi = newSpellString.match(/ai/g);
-// for (var i = 0; i < searchAi.length; i++) {
-//   points += subspellPoints.ai
-// }
-
-
-
-
-
-
-
-
-console.log(searchAi);
 console.log(points);
-
-
+points = points - correctedSpellString.length
+if (points < 0 ) {
+  points = 0
+} else {
+  points
+}
+console.log(points);
   return damage
 }
-damage("fedaiai");
+damage("xfexxaixxainnexxainesdafsdfsdnenexxnexxjexxjeexxdupaaizz");
