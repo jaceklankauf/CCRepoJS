@@ -19,14 +19,21 @@ if (newString.indexOf('fe')== -1 || newString.lastIndexOf('fe') != newString.ind
   console.log("it is not a Fespell");
   return points
 } else {
-  let newSpellString = newString.substring(newString.indexOf('fe'), newString.lastIndexOf('ai')+2);
-  console.log(newSpellString);
+  let tempSpellString = newString.substring(newString.indexOf('fe'));
+  // console.log(tempSpellString);
+  if ((tempSpellString.indexOf('ai') < tempSpellString.indexOf('fe'))||(tempSpellString.indexOf('ai')==-1)) {
+    console.log("wrong spell");
+    return points
+  } else {
+    let newSpellString = tempSpellString.substring(0, tempSpellString.lastIndexOf('ai')+2)
+    points += subspellPoints.fe;
+    console.log(newSpellString);
+    console.log(points);
+  }
 }
 
-console.log(newString.indexOf('fe'));
-console.log(newString.lastIndexOf('fe'));
 
 
   return damage
 }
-damage("desefeliciaiaita");
+damage("deseaifeliaictetata");
