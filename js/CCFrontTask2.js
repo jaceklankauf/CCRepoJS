@@ -1,13 +1,5 @@
 const damage = (spellString) => {
-  const subspellPoints = {
-  'fe':1,
-  'je':2,
-  'jee':3,
-  'ain':3,
-  'dai':5,
-  'ne':2,
-  'ai':2
-}
+  
 let points = 0;
 let newString = spellString.toLowerCase(); //string methods are case sensitive
 if (typeof newString != 'string') {
@@ -26,7 +18,7 @@ if (newString.indexOf('fe')== -1 || newString.lastIndexOf('fe') != newString.ind
     return points
   } else {
     var newSpellString = tempSpellString.substring(0, tempSpellString.lastIndexOf('ai')+2)
-    points += subspellPoints.fe;
+    points += 1;
     var correctedSpellString = newSpellString.substring(2)
   }
 }
@@ -34,7 +26,7 @@ if (newString.indexOf('fe')== -1 || newString.lastIndexOf('fe') != newString.ind
 if (correctedSpellString.indexOf('dai')!=-1) {
   var searchDai = correctedSpellString.match(/dai/g);
   for (var i = 0; i < searchDai.length; i++) {
-    points += subspellPoints.dai
+    points += 5;
     correctedSpellString=correctedSpellString.split('dai').join('');
   }
 }
@@ -42,8 +34,8 @@ if (correctedSpellString.indexOf('dai')!=-1) {
 if (correctedSpellString.indexOf('aine')!=-1) {
   var searchAine = correctedSpellString.match(/aine/g);
   for (var i = 0; i < searchAine.length; i++) {
-    points += subspellPoints.ai
-    points += subspellPoints.ne
+    points += 2;
+    points += 2
     correctedSpellString=correctedSpellString.split('aine').join('');
   }
 }
@@ -51,7 +43,7 @@ if (correctedSpellString.indexOf('aine')!=-1) {
 if (correctedSpellString.indexOf('ain')!=-1) {
   var searchAin = correctedSpellString.match(/ain/g);
   for (var i = 0; i < searchAin.length; i++) {
-    points += subspellPoints.ain
+    points += 3
     correctedSpellString=correctedSpellString.split('ain').join('');
   }
 }
@@ -59,7 +51,7 @@ if (correctedSpellString.indexOf('ain')!=-1) {
 if (correctedSpellString.indexOf('ai')!=-1) {
   var searchAi = correctedSpellString.match(/ai/g);
   for (var i = 0; i < searchAi.length; i++) {
-    points += subspellPoints.ai
+    points += 2
     correctedSpellString=correctedSpellString.split('ai').join('');
   }
 }
@@ -67,7 +59,7 @@ if (correctedSpellString.indexOf('ai')!=-1) {
 if (correctedSpellString.indexOf('jee')!=-1) {
   var searchJee = correctedSpellString.match(/jee/g);
   for (var i = 0; i < searchJee.length; i++) {
-    points += subspellPoints.jee
+    points += 3
     correctedSpellString=correctedSpellString.split('jee').join('');
   }
 }
@@ -75,7 +67,7 @@ if (correctedSpellString.indexOf('jee')!=-1) {
 if (correctedSpellString.indexOf('je')!=-1) {
   var searchJe = correctedSpellString.match(/je/g);
   for (var i = 0; i < searchJe.length; i++) {
-    points += subspellPoints.je
+    points += 2
     correctedSpellString=correctedSpellString.split('je').join('');
   }
 }
@@ -83,7 +75,7 @@ if (correctedSpellString.indexOf('je')!=-1) {
 if (correctedSpellString.indexOf('ne')!=-1) {
   var searchNe = correctedSpellString.match(/ne/g);
   for (var i = 0; i < searchNe.length; i++) {
-    points += subspellPoints.ne
+    points += 2
     correctedSpellString=correctedSpellString.split('ne').join('');
   }
 }
@@ -98,7 +90,8 @@ if (points < 0 ) {
 } else {
   points
 }
+
 console.log(points);
   return damage
 }
-damage("xfexxaixxainnexxainesdafsdfsdnenexxnexxjexxjeexxdupaaizz");
+damage("xfexxaixainnexainesdafsdfsdnenexxnexxjexjeexxdupaaizz");
