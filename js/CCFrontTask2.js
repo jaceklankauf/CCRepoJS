@@ -3,15 +3,15 @@ exports.damage = (spellString) => {
 let points = 0;
 let newString = spellString.toLowerCase(); //string methods are case sensitive
 if (typeof newString != 'string') {
-  return points
+  return 0
 }
 
 if (newString.indexOf('fe')== -1 || newString.lastIndexOf('fe') != newString.indexOf('fe')) {
-  return points
+  return 0
 } else {
   let tempSpellString = newString.substring(newString.indexOf('fe'));
   if ((tempSpellString.indexOf('ai') < tempSpellString.indexOf('fe'))||(tempSpellString.indexOf('ai')==-1)) {
-    return points
+    return 0
   } else {
     var newSpellString = tempSpellString.substring(0, tempSpellString.lastIndexOf('ai')+2)
     points += 1;
@@ -56,11 +56,7 @@ if (newString.indexOf('fe')== -1 || newString.lastIndexOf('fe') != newString.ind
   }
 
 points = points - tempString.length
-if (points < 0 ) {
-  points = 0
-} else {
-  points
-}
+points = points < 0 ? 0 : points;
 
-  return damage
+  return points;
 }
